@@ -1,24 +1,34 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import {Switch, Route, BrowserRouter as Router, Redirect, NavLink} from "react-router-dom"
+import LoginPage from "./components/Login/LoginPage"
+import SearchPage from "./components/Search/SearchPage"
+import FavoritesPage from "./components/Favorites/FavoritesPage"
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Router>
+      <nav>
+        <NavLink to ="/login" activeClassName ='activeLinks'>Login</NavLink>
+        <NavLink to ="/search" activeClassName ='activeLinks'>Search</NavLink>
+        <NavLink to ="/favorites" activeClassName ='activeLinks'>Favorites</NavLink>
+      </nav>
+      <main>
+        <Switch>
+          <Route path ="/login" component = {LoginPage}/>
+          <Route path ="/search" component = {SearchPage}/>
+          <Route path ="/favorites" component = {FavoritesPage}/>
+          <Route path = "*" >
+            <Redirect to="/search"/>
+          </Route>
+        </Switch>
+      </main>
+      <footer>Footer weeee</footer>
+      </Router>
+    </>
   );
 }
 

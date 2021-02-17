@@ -12,9 +12,9 @@ function App() {
     <>
     <Router>
       <nav>
-        <NavLink to ="/login" activeClassName ='activeLinks'>Login</NavLink>
-        <NavLink to ="/search" activeClassName ='activeLinks'>Search</NavLink>
-        <NavLink to ="/favorites" activeClassName ='activeLinks'>Favorites</NavLink>
+        <NavLink className = "link" to ="/login" activeClassName ='activeLinks'>Login</NavLink>
+        <NavLink className = "link" to ="/search" activeClassName ='activeLinks'>Search</NavLink>
+        <NavLink className = "link" to ="/favorites" activeClassName ='activeLinks'>Favorites</NavLink>
       </nav>
       <main>
         <Switch>

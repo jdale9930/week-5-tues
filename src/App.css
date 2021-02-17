@@ -2,5 +2,23 @@
   text-align: center;
 }
 .activeLinks{
-  background-color: green;
+  background-color: red;
+  border: 1px solid black;
+  flex-basis: calc((100% / 3) - 2px);
+  text-align: center;
+}
+
+nav{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  box-shadow: 2px 2px 5px 2px black;
+  height: 25px;
+  margin-bottom: 20px;
+}
+
+.link{
+  border: 1px solid black;
+  flex-basis: calc((100% / 3) - 2px);
+  text-align: center;
 }

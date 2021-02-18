@@ -4,12 +4,15 @@ import {Switch, Route, BrowserRouter as Router, Redirect, NavLink} from "react-r
 import LoginPage from "./components/Login/LoginPage"
 import SearchPage from "./components/Search/SearchPage"
 import FavoritesPage from "./components/Favorites/FavoritesPage"
+import {Provider} from "react-redux"
+import store from "./redux/store"
 
 
 
 function App() {
   return (
     <>
+    <Provider store = {store}>
     <Router>
       <nav>
         <NavLink className = "link" to ="/login" activeClassName ='activeLinks'>Login</NavLink>
@@ -28,6 +31,7 @@ function App() {
       </main>
       <footer>Footer weeee</footer>
       </Router>
+      </Provider>
     </>
   );
 }

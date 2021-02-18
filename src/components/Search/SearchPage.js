@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
+import { connect } from 'react-redux';
+//import {setSearch, setUser} from "../redux/"
 import GifDisplay from "../Gif/GifDisplay";
+import './Search.css'
 
 const SearchPage = (props) => {
     const [query, setQuery] = useState("")
@@ -51,12 +54,21 @@ const SearchPage = (props) => {
                 onClick = {(e) => getGifs(query, rating, limit)}
             >Search</button>
         </div>
-        
+        <div className = "container">
         {error.length > 0 && <h1>{error}</h1>}
         {error.length === 0 && 
-            gifs.map((v) => <GifDisplay key = {v.id} src = {v.url}/>)}
+            gifs.map((v) => <GifDisplay key = {v.id} src = {v.url} title = {v.title}/>)}
+        </div>
         </>
     )
 }
 
-export default SearchPage
+// const mapDispatchToProps = {
+//     //setSearch
+// }
+
+// function mapStateToProps(state)
+// {
+//     return{gifs: globalState.search}
+// };
+export default (SearchPage)
